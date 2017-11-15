@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F7361C96-0FEB-4C41-B0C8-682576432771}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuanLyNhanSu</RootNamespace>
+    <AssemblyName>QuanLyNhanSu</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="class_CRUD.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormBonus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormBonus.Designer.cs">
+      <DependentUpon>_FormBonus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormChangeAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormChangeAcc.Designer.cs">
+      <DependentUpon>_FormChangeAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormChangeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormChangeInfo.Designer.cs">
+      <DependentUpon>_FormChangeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormChangePass.Designer.cs">
+      <DependentUpon>_FormChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormChuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormChuyen.Designer.cs">
+      <DependentUpon>_FormChuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormDieuKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormDieuKhoan.Designer.cs">
+      <DependentUpon>_FormDieuKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormEditSalaryAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormEditSalaryAll.Designer.cs">
+      <DependentUpon>_FormEditSalaryAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormFine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormFine.Designer.cs">
+      <DependentUpon>_FormFine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormForgetPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormForgetPass.Designer.cs">
+      <DependentUpon>_FormForgetPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormLogin.Designer.cs">
+      <DependentUpon>_FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_FormMessComplete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormMessComplete.Designer.cs">
+      <DependentUpon>_FormMessComplete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormMessToChangeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormMessToChangeInfo.Designer.cs">
+      <DependentUpon>_FormMessToChangeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormNhanVien.Designer.cs">
+      <DependentUpon>_FormNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormQuanLyTaiChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormQuanLyTaiChinh.Designer.cs">
+      <DependentUpon>_FormQuanLyTaiChinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormSendFeedBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormSendFeedBack.Designer.cs">
+      <DependentUpon>_FormSendFeedBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormSendMess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormSendMess.Designer.cs">
+      <DependentUpon>_FormSendMess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FormSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FormSignUp.Designer.cs">
+      <DependentUpon>_FormSignUp.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormBonus.resx">
+      <DependentUpon>_FormBonus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormChangeAcc.resx">
+      <DependentUpon>_FormChangeAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormChangeInfo.resx">
+      <DependentUpon>_FormChangeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormChangePass.resx">
+      <DependentUpon>_FormChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormChuyen.resx">
+      <DependentUpon>_FormChuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormDieuKhoan.resx">
+      <DependentUpon>_FormDieuKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormEditSalaryAll.resx">
+      <DependentUpon>_FormEditSalaryAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormFine.resx">
+      <DependentUpon>_FormFine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormForgetPass.resx">
+      <DependentUpon>_FormForgetPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormLogin.resx">
+      <DependentUpon>_FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="_FormMessComplete.resx">
+      <DependentUpon>_FormMessComplete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormMessToChangeInfo.resx">
+      <DependentUpon>_FormMessToChangeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormNhanVien.resx">
+      <DependentUpon>_FormNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormQuanLyTaiChinh.resx">
+      <DependentUpon>_FormQuanLyTaiChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormSendFeedBack.resx">
+      <DependentUpon>_FormSendFeedBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormSendMess.resx">
+      <DependentUpon>_FormSendMess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FormSignUp.resx">
+      <DependentUpon>_FormSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background-login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_Avatar-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\674008-key_reg_registration_register_signup_sign_up-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dangxuat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\change password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\change pass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background-login1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddAcc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DelAcc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FindAcc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditAcc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hourglass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarm-clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bunus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salary %281%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
