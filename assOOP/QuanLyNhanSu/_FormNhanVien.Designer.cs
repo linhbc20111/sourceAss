@@ -97,6 +97,9 @@
             this._quanly = new System.Windows.Forms.TabControl();
             this._labelHello = new System.Windows.Forms.Label();
             this._labelchuyenCV = new System.Windows.Forms.Label();
+            this._labelTotorial = new System.Windows.Forms.Label();
+            this._tBoxTutorial = new System.Windows.Forms.TextBox();
+            this._tabhelp.SuspendLayout();
             this._Mess.SuspendLayout();
             this._grBoxShowContent.SuspendLayout();
             this._grBoxThaoTac.SuspendLayout();
@@ -136,12 +139,14 @@
             // _tabhelp
             // 
             this._tabhelp.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._tabhelp.Controls.Add(this._labelTotorial);
+            this._tabhelp.Controls.Add(this._tBoxTutorial);
             this._tabhelp.Location = new System.Drawing.Point(4, 25);
             this._tabhelp.Name = "_tabhelp";
             this._tabhelp.Padding = new System.Windows.Forms.Padding(3);
             this._tabhelp.Size = new System.Drawing.Size(951, 577);
             this._tabhelp.TabIndex = 5;
-            this._tabhelp.Text = "         Trợ Giúp         ";
+            this._tabhelp.Text = "        Trợ Giúp         ";
             // 
             // _Mess
             // 
@@ -312,6 +317,7 @@
             this._dtgrtViewMess.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._dtgrtViewMess.Location = new System.Drawing.Point(6, 108);
             this._dtgrtViewMess.Name = "_dtgrtViewMess";
+            this._dtgrtViewMess.ReadOnly = true;
             this._dtgrtViewMess.Size = new System.Drawing.Size(506, 472);
             this._dtgrtViewMess.TabIndex = 0;
             this._dtgrtViewMess.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._dtgrtViewMess_CellClick);
@@ -885,6 +891,28 @@
             this._labelchuyenCV.Text = "Chuyển Chức Vụ";
             this._labelchuyenCV.Click += new System.EventHandler(this._labelchuyenCV_Click);
             // 
+            // _labelTotorial
+            // 
+            this._labelTotorial.AutoSize = true;
+            this._labelTotorial.Font = new System.Drawing.Font("Sitka Small", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this._labelTotorial.Location = new System.Drawing.Point(413, 13);
+            this._labelTotorial.Name = "_labelTotorial";
+            this._labelTotorial.Size = new System.Drawing.Size(120, 28);
+            this._labelTotorial.TabIndex = 5;
+            this._labelTotorial.Text = "Hướng Dẫn";
+            // 
+            // _tBoxTutorial
+            // 
+            this._tBoxTutorial.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._tBoxTutorial.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this._tBoxTutorial.Location = new System.Drawing.Point(20, 75);
+            this._tBoxTutorial.Multiline = true;
+            this._tBoxTutorial.Name = "_tBoxTutorial";
+            this._tBoxTutorial.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this._tBoxTutorial.Size = new System.Drawing.Size(910, 488);
+            this._tBoxTutorial.TabIndex = 4;
+            this._tBoxTutorial.Text = resources.GetString("_tBoxTutorial.Text");
+            // 
             // _FormNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -900,6 +928,8 @@
             this.Name = "_FormNhanVien";
             this.Text = "Nhân Viên";
             this.Load += new System.EventHandler(this._FormNhanVien_Load);
+            this._tabhelp.ResumeLayout(false);
+            this._tabhelp.PerformLayout();
             this._Mess.ResumeLayout(false);
             this._grBoxShowContent.ResumeLayout(false);
             this._grBoxShowContent.PerformLayout();
@@ -989,5 +1019,7 @@
         private System.Windows.Forms.Label _labelSalary1Day;
         private System.Windows.Forms.Label _labelHello;
         private System.Windows.Forms.Label _labelchuyenCV;
+        private System.Windows.Forms.Label _labelTotorial;
+        private System.Windows.Forms.TextBox _tBoxTutorial;
     }
 }

@@ -117,6 +117,111 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Điều 1. Công ty cổ phần
+1. Công ty cổ phần là doanh nghiệp, trong đó:
+
+a) Vốn điều lệ được chia thành nhiều phần bằng nhau gọi là cổ phần;
+
+b) Cổ đông có thể là tổ chức, cá nhân; số lượng cổ đông tối thiểu là ba và không hạn chế số lượng tối đa;
+
+c) Cổ đông chỉ chịu trách nhiệm về các khoản nợ và nghĩa vụ tài sản khác của doanh nghiệp trong phạm vi số vốn đã góp vào doanh nghiệp;
+
+d) Cổ đông có quyền tự do chuyển nhượng cổ phần của mình cho người khác, trừ trường hợp quy định tại khoản 3 Điều 81 và khoản 5 Điều 84 của Luật này.
+
+2. Công ty cổ phần có tư cách pháp nhân kể từ ngày được cấp Giấy chứng nhận đăng ký kinh doanh.
+
+3. Công ty cổ phần có quyền phát hành chứng khoán các loại để huy động vốn.
+
+Điều 2. Các loại cổ phần
+1. Công ty cổ phần phải có cổ phần phổ thông. Người sở hữu cổ phần phổ thông là cổ đông phổ thông.
+
+2. Công ty cổ phần có thể có cổ phần ưu đãi. Người sở hữu cổ phần ưu đãi gọi là cổ đông ưu đãi.
+
+Cổ phần ưu đãi gồm các loại sau đây:
+
+a) Cổ phần ưu đãi biểu quyết;
+
+b) Cổ phần ưu đãi cổ tức;
+
+c) Cổ phần ưu đãi hoàn lại;
+
+d) Cổ phần ưu đãi khác do Điều lệ công ty quy định.
+
+3. Chỉ có tổ chức được Chính phủ uỷ quyền và cổ đông sáng lập được quyền nắm giữ cổ phần ưu đãi biểu quyết. Ưu đãi biểu quyết của cổ đông sáng lập chỉ có hiệu lực trong ba năm, kể từ ngày công ty được cấp Giấy chứng nhận đăng ký kinh doanh. Sau thời hạn đó, cổ phần ưu đãi biểu quyết của cổ đông sáng lập chuyển đổi thành cổ phần phổ thông.
+
+4. Người được quyền mua cổ phần ưu đãi cổ tức, cổ phần ưu đãi hoàn lại và cổ phần ưu đãi khác do Điều lệ công ty quy định hoặc do Đại hội đồng cổ đông quyết định.
+
+5. Mỗi cổ phần của cùng một loại đều tạo cho người sở hữu nó các quyền, nghĩa vụ và lợi ích ngang nhau.
+
+6. Cổ phần phổ thông không thể chuyển đổi thành cổ phần ưu đãi. Cổ phần ưu đãi có thể chuyển đổi thành cổ phần phổ thông theo quyết định của Đại hội đồng cổ đông.
+
+Điều 3. Quyền của cổ đông phổ thông
+1. Cổ đông phổ thông có các quyền sau đây:
+
+a) Tham dự và phát biểu trong các Đại hội cổ đông và thực hiện quyền biểu quyết trực tiếp hoặc thông qua đại diện được uỷ quyền; mỗi cổ phần phổ thông có một phiếu biểu quyết;
+
+b) Được nhận cổ tức với mức theo quyết định của Đại hội đồng cổ đông;
+
+c) Được ưu tiên mua cổ phần mới chào bán tương ứng với tỷ lệ cổ phần phổ thông của từng cổ đông trong công ty;
+
+d) Được tự do chuyển nhượng cổ phần của mình cho cổ đông khác và cho người không phải là cổ đông, trừ trường hợp quy định tại khoản 5 Điều 84 của Luật này;
+
+đ) Xem xét, tra cứu và trích lục các thông tin trong Danh sách cổ đông có quyền biểu quyết và yêu cầu sửa đổi các thông tin không chính xác;
+
+e) Xem xét, tra cứu, trích lục hoặc sao chụp Điều lệ công ty, sổ biên bản họp Đại hội đồng cổ đông và các nghị quyết của Đại hội đồng cổ đông;
+
+g) Khi công ty giải thể hoặc phá sản, được nhận một phần tài sản còn lại tương ứng với số cổ phần góp vốn vào công ty;
+
+h) Các quyền khác theo quy định của Luật này và Điều lệ công ty.
+
+2. Cổ đông hoặc nhóm cổ đông sở hữu trên 10% tổng số cổ phần phổ thông trong thời hạn liên tục ít nhất sáu tháng hoặc một tỷ lệ khác nhỏ hơn quy định tại Điều lệ công ty có các quyền sau đây:
+
+a) Đề cử người vào Hội đồng quản trị và Ban kiểm soát (nếu có);
+
+b) Xem xét và trích lục sổ biên bản và các nghị quyết của Hội đồng quản trị, báo cáo tài chính giữa năm và hằng năm theo mẫu của hệ thống kế toán Việt Nam và các báo cáo của Ban kiểm soát;
+
+c) Yêu cầu triệu tập họp Đại hội đồng cổ đông trong trường hợp quy định tại khoản 3 Điều này;
+
+d) Yêu cầu Ban kiểm soát kiểm tra từng vấn đề cụ thể liên quan đến quản lý, điều hành hoạt động của công ty khi xét thấy cần thiết. Yêu cầu phải bằng văn bản; phải có họ, tên, địa chỉ thường trú, quốc tịch, số Giấy chứng minh nhân dân, Hộ chiếu hoặc chứng thực cá nhân hợp pháp khác đối với cổ đông là cá nhân; tên, địa chỉ thường trú, quốc tịch, số quyết định thành lập hoặc số đăng ký kinh doanh đối với cổ đông là tổ chức; số lượng cổ phần và thời điểm đăng ký cổ phần của từng cổ đông, tổng số cổ phần của cả nhóm cổ đông và tỷ lệ sở hữu trong tổng số cổ phần của công ty; vấn đề cần kiểm tra, mục đích kiểm tra;
+
+đ) Các quyền khác theo quy định của Luật này và Điều lệ công ty.
+
+3. Cổ đông hoặc nhóm cổ đông quy định tại khoản 2 Điều này có quyền yêu cầu triệu tập họp Đại hội đồng cổ đông trong các trường hợp sau đây:
+
+a) Hội đồng quản trị vi phạm nghiêm trọng quyền của cổ đông, nghĩa vụ của người quản lý hoặc ra quyết định vượt quá thẩm quyền được giao;
+
+b) Nhiệm kỳ của Hội đồng quản trị đã vượt quá sáu tháng mà Hội đồng quản trị mới chưa được bầu thay thế;
+
+c) Các trường hợp khác theo quy định của Điều lệ công ty.
+
+Yêu cầu triệu tập họp Hội đồng cổ đông phải được lập bằng văn bản và phải có họ, tên, địa chỉ thường trú, số Giấy chứng minh nhân dân, Hộ chiếu hoặc chứng thực cá nhân hợp pháp khác đối với cổ đông là cá nhân; tên, địa chỉ thường trú, quốc tịch, số quyết định thành lập hoặc số đăng ký kinh doanh đối với cổ đông là tổ chức; số cổ phần và thời điểm đăng ký cổ phần của từng cổ đông, tổng số cổ phần của cả nhóm cổ đông và tỷ lệ sở hữu trong tổng số cổ phần của công ty, căn cứ và lý do yêu cầu triệu tập họp Đại hội đồng cổ đông. Kèm theo yêu cầu phải có các tài liệu, chứng cứ về các vi phạm của Hội đồng quản trị, mức độ vi phạm hoặc về quyết định vượt quá thẩm quyền.
+
+4. Trong trường hợp Điều lệ công ty không có quy định khác thì việc đề cử người vào Hội đồng quản trị và Ban kiểm soát quy định tại điểm a khoản 2 Điều này được thực hiện như sau:
+
+a) Các cổ đông phổ thông tự nguyện tập hợp thành nhóm thoả mãn các điều kiện quy định để đề cử người vào Hội đồng quản trị và Ban kiểm soát phải thông báo về việc họp nhóm cho các cổ đông dự họp biết chậm nhất ngay khi khai mạc Đại hội đồng cổ đông;
+
+b) Căn cứ số lượng thành viên Hội đồng quản trị và Ban kiểm soát, cổ đông hoặc nhóm cổ đông quy định tại khoản 2 Điều này được quyền đề cử một hoặc một số người theo quyết định của Đại hội đồng cổ đông làm ứng cử viên Hội đồng quản trị và Ban kiểm soát. Trường hợp số ứng cử viên được cổ đông hoặc nhóm cổ đông đề cử thấp hơn số ứng cử viên mà họ được quyền đề cử theo quyết định của Đại hội đồng cổ đông thì số ứng cử viên còn lại do Hội đồng quản trị, Ban kiểm soát và các cổ đông khác đề cử.
+
+Điều 4. Nghĩa vụ của cổ đông phổ thông
+1. Thanh toán đủ số cổ phần cam kết mua trong thời hạn chín mươi ngày, kể từ ngày công ty được cấp Giấy chứng nhận đăng ký kinh doanh; chịu trách nhiệm về các khoản nợ và nghĩa vụ tài sản khác của công ty trong phạm vi số vốn đã góp vào công ty.
+
+Không được rút vốn đã góp bằng cổ phần phổ thông ra khỏi công ty dưới mọi hình thức, trừ trường hợp được công ty hoặc người khác mua lại cổ phần. Trường hợp có cổ đông rút một phần hoặc toàn bộ vốn cổ phần đã góp trái với quy định tại khoản này thì thành viên Hội đồng quản trị và người đại diện theo pháp luật của công ty phải cùng liên đới chịu trách nhiệm về các khoản nợ và nghĩa vụ tài sản khác của công ty trong phạm vi giá trị cổ phần đã bị rút.
+
+2. Tuân thủ Điều lệ và Quy chế quản lý nội bộ công ty.
+
+3. Chấp hành quyết định của Đại hội đồng cổ đông, Hội đồng quản trị.
+
+4. Thực hiện các nghĩa vụ khác theo quy định của Luật này và Điều lệ công ty.
+
+5. Cổ đông phổ thông phải chịu trách nhiệm cá nhân khi nhân danh công ty dưới mọi hình thức để thực hiện một trong các hành vi sau đây:
+
+a) Vi phạm pháp luật;
+
+b) Tiến hành kinh doanh và các giao dịch khác để tư lợi hoặc phục vụ lợi ích của tổ chức, cá nhân khác;
+
+c) Thanh toán các khoản nợ chưa đến hạn trước nguy cơ tài chính có thể xảy ra đối với công ty.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

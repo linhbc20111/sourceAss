@@ -46,7 +46,7 @@ namespace QuanLyNhanSu
         {
             try
             {
-                String LoadSend = "SELECT thongbao.id_User, lastName, kieuSend, tieuDe FROM thongBao, _user WHERE thongBao.id_User = _user.id_User AND state != -3";
+                String LoadSend = "SELECT thongbao.id_User, lastName, kieuSend, tieuDe FROM thongBao, _user WHERE thongBao.id_User = _user.id_User AND state > -2";
                 class_CRUD dataSend = new class_CRUD();
                 _dtgrtViewMess.DataSource = dataSend.uploadData(LoadSend);
 
@@ -812,7 +812,7 @@ namespace QuanLyNhanSu
         {
             try
             {
-                String LoadSend = "SELECT thongbao.id_User, lastName, kieuSend, tieuDe FROM thongBao, _user WHERE thongBao.id_User = _user.id_User AND state != -3";
+                String LoadSend = "SELECT thongbao.id_User, lastName, kieuSend, tieuDe FROM thongBao, _user WHERE thongBao.id_User = _user.id_User AND state > -2";
                 class_CRUD dataSend = new class_CRUD();
                 _dtgrtViewMess.DataSource = dataSend.uploadData(LoadSend);
 
@@ -831,7 +831,7 @@ namespace QuanLyNhanSu
         {
             try
             {
-                String LoadSend = "SELECT thongbao.id_User, lastName, kieuSend, tieuDe FROM thongBao, _user WHERE thongBao.id_User = _user.id_User AND (state = 1 OR state = -2)";
+                String LoadSend = "SELECT thongbao.id_User, lastName, kieuSend, tieuDe FROM thongBao, _user WHERE thongBao.id_User = _user.id_User AND state = 1";
                 class_CRUD dataSend = new class_CRUD();
                 _dtgrtViewMess.DataSource = dataSend.uploadData(LoadSend);
 
@@ -894,7 +894,7 @@ namespace QuanLyNhanSu
                     String SeeLate = "DELETE FROM thongBao WHERE id_User = '" + _dtgrtViewMess.Rows[numrowMess].Cells[0].Value.ToString() + "' AND tieuDe = N'" + _dtgrtViewMess.Rows[numrowMess].Cells[3].Value.ToString() + "'";
                     class_CRUD dataSend = new class_CRUD();
                     dataSend.handleData(SeeLate);
-                    _buttonSeen_Click(sender, e);
+                    _buttonSeeAll_Click(sender, e);
 
 
                     a = 0;

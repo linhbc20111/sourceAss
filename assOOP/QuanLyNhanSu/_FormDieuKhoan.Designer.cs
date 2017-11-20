@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_FormDieuKhoan));
             this._labelDieuKhoan = new System.Windows.Forms.Label();
             this._buttonDahieu = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // _labelDieuKhoan
@@ -46,7 +47,7 @@
             // _buttonDahieu
             // 
             this._buttonDahieu.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this._buttonDahieu.Location = new System.Drawing.Point(288, 353);
+            this._buttonDahieu.Location = new System.Drawing.Point(291, 378);
             this._buttonDahieu.Name = "_buttonDahieu";
             this._buttonDahieu.Size = new System.Drawing.Size(86, 30);
             this._buttonDahieu.TabIndex = 1;
@@ -54,12 +55,24 @@
             this._buttonDahieu.UseVisualStyleBackColor = false;
             this._buttonDahieu.Click += new System.EventHandler(this._buttonDahieu_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.textBox1.Location = new System.Drawing.Point(26, 55);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox1.Size = new System.Drawing.Size(631, 317);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Text = resources.GetString("textBox1.Text");
+            // 
             // _FormDieuKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(669, 420);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this._buttonDahieu);
             this.Controls.Add(this._labelDieuKhoan);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -74,5 +87,6 @@
 
         private System.Windows.Forms.Label _labelDieuKhoan;
         private System.Windows.Forms.Button _buttonDahieu;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

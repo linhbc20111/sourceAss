@@ -124,6 +124,8 @@
             this._buttonDangXuat = new System.Windows.Forms.Button();
             this._labelHello = new System.Windows.Forms.Label();
             this._labelchuyenCV = new System.Windows.Forms.Label();
+            this._labelTotorial = new System.Windows.Forms.Label();
+            this._tBoxTutorial = new System.Windows.Forms.TextBox();
             this._quanly.SuspendLayout();
             this._quanlyAccount.SuspendLayout();
             this._grBoxInfo.SuspendLayout();
@@ -143,6 +145,7 @@
             this._grBoxThaoTac.SuspendLayout();
             this._grBoxChoseListMess.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dtgrtViewMess)).BeginInit();
+            this._tabhelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // _labelQuanLyTC
@@ -1060,9 +1063,9 @@
             this._lbContent.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this._lbContent.Location = new System.Drawing.Point(178, 16);
             this._lbContent.Name = "_lbContent";
-            this._lbContent.Size = new System.Drawing.Size(101, 24);
+            this._lbContent.Size = new System.Drawing.Size(98, 24);
             this._lbContent.TabIndex = 0;
-            this._lbContent.Text = "Thông Báo:";
+            this._lbContent.Text = "Thông Tin:";
             // 
             // _grBoxThaoTac
             // 
@@ -1157,6 +1160,8 @@
             // _tabhelp
             // 
             this._tabhelp.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._tabhelp.Controls.Add(this._labelTotorial);
+            this._tabhelp.Controls.Add(this._tBoxTutorial);
             this._tabhelp.Location = new System.Drawing.Point(4, 25);
             this._tabhelp.Name = "_tabhelp";
             this._tabhelp.Padding = new System.Windows.Forms.Padding(3);
@@ -1196,6 +1201,28 @@
             this._labelchuyenCV.TabIndex = 6;
             this._labelchuyenCV.Text = "Chuyển Chức Vụ";
             this._labelchuyenCV.Click += new System.EventHandler(this._labelchuyenCV_Click);
+            // 
+            // _labelTotorial
+            // 
+            this._labelTotorial.AutoSize = true;
+            this._labelTotorial.Font = new System.Drawing.Font("Sitka Small", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this._labelTotorial.Location = new System.Drawing.Point(413, 18);
+            this._labelTotorial.Name = "_labelTotorial";
+            this._labelTotorial.Size = new System.Drawing.Size(120, 28);
+            this._labelTotorial.TabIndex = 3;
+            this._labelTotorial.Text = "Hướng Dẫn";
+            // 
+            // _tBoxTutorial
+            // 
+            this._tBoxTutorial.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._tBoxTutorial.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this._tBoxTutorial.Location = new System.Drawing.Point(20, 80);
+            this._tBoxTutorial.Multiline = true;
+            this._tBoxTutorial.Name = "_tBoxTutorial";
+            this._tBoxTutorial.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this._tBoxTutorial.Size = new System.Drawing.Size(910, 488);
+            this._tBoxTutorial.TabIndex = 2;
+            this._tBoxTutorial.Text = resources.GetString("_tBoxTutorial.Text");
             // 
             // _FormQuanLyTaiChinh
             // 
@@ -1237,6 +1264,8 @@
             this._grBoxThaoTac.ResumeLayout(false);
             this._grBoxChoseListMess.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._dtgrtViewMess)).EndInit();
+            this._tabhelp.ResumeLayout(false);
+            this._tabhelp.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1331,5 +1360,7 @@
         private System.Windows.Forms.Label _labelBonus;
         private System.Windows.Forms.Label _labelHello;
         private System.Windows.Forms.Label _labelchuyenCV;
+        private System.Windows.Forms.Label _labelTotorial;
+        private System.Windows.Forms.TextBox _tBoxTutorial;
     }
 }

@@ -117,6 +117,39 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="_tBoxTutorial.Text" xml:space="preserve">
+    <value>I-Giới thiệu về phần mềm Quản lý nhân sự:
+	Phần mềm Quản lý nhân sự là một giải pháp tuyệt vời dành cho các công ty lớn có nhiều chi nhánh. Phần mềm này cũng cấp các chức năng giúp cho các nhà quản lý thực hiện công việc và vận hành công ty một cách tốt hơn. Phần mềm Quản lý nhân sự được xây dựng để phục vụ chính cho nhân viên và quản lý.
+	+ Nhân viên: Phần mềm cung cấp tài khoản giúp nhân viên có thể cung cấp, thay đổi thông tin cá nhân( Họ tên, Ngày sinh, Địa chỉ, CMND,…) có các nhà quản lý. Ngoài ra, thông qua phần mềm, nhân viên có thể nắm bắt được lương của mình và nhận thông bảo, chỉ thị từ quản lý cũng như hệ thống.
+	+ Quản lý: Phần mềm cung cấp tài khoản giúp các nhà quản lý có thể nắm bắt được tình hình nhân sự (thông tin cá nhân, lương, các khoản thưởng, phạt,…) từ đó có thể thống kê tính toán tài chình và có thể điều chỉnh lại tài chính một cách thích hợp, vạch ra những hướng đi đúng đắn cho công ty.
+Đầu tiên, đây là giao diện khi khởi động phần mềm
+Đăng ký tài khoản:
+Nếu chưa có tài khoản, bạn có thể click vào “Đăng ký” để thực hiện công việc đăng ký tài khoản:
+Khi đăng ký, bạn có thể chọn chức vụ: nhân viên, quản lý nhân sự hoặc quản lý tài chính tương đương với các chức năng khác nhau mà chương trình cung cấp cho tài khoản. Bạn điền đầy đủ thông tin của mình vào các mục trong bảng Đăng ký, sau đó nhấn vào ô “Đăng ký” để hoàn tất việc đăng ký tài khoản.
+ 
+
+Quên mật khẩu.
+	Trong trường hợp bạn quên đi mật khẩu để đăng nhập vào tài khoản, bạn có thể “click” vào ô “Quên mật khẩu”, bảng sau sẽ hiện lên
+Bạn điền đầy đủ các thông tin trong bảng theo yêu cầu rồi nhấn vào ô “Gửi yêu cầu”. Sau khi gửi yêu cầu, bạn vui long đến bộ phận nhân sự để xác nhận, hoàn tất việc lấy lại tài khoản.
+
+II- Nhân viên:
+	Giao diện của chương trình sau khi đăng nhập với chức vụ “Nhân viên”
+
+1, Tài khoản:
+Ở chức năng này, bạn có thể xem thông tin tài khoản của mình, đổi mật khẩu và sửa đổi thông tin tài khoản khi nhấn vào “Đổi mật khẩu” và “Sửa thông tin”, các bảng sẽ hiện ra tương ứng như hình bên dưới, chúng ta điền đủ thông tin rồi nhấn Thay đổi/Cập nhật để hoàn tất thao tác của mình. 
+
+2, Lương :
+
+	Các tài khoản Nhân viên có thể vào mục Lương để có thể xem thông tin về lương, thưởng, phạt ,….
+3, Thông báo:
+
+   Ở chức năng này, bạn có thể xem các thông báo mới khi Click vào “Thông báo mới”, và có thể thực hiện thao tác Xóa hoặc Gửi phản hồi với các thông báo đó.
+   Khi thực hiện chức năng Gửi phản hồi, bạn điền đầy đủ các thông tin về tiêu đề, nội dung và nhấn “Gửi” để hoàn tất việc gửi phản hồi.
+
+4, Trợ giúp:
+	Bạn có thể tham khảo ở mục Trợ giúp khi gặp những khó khăn trong quá trình sử dụng chương trình.
+</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

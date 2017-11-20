@@ -193,11 +193,16 @@ namespace QuanLyNhanSu
 
         private void _buttonDelReq_Click(object sender, EventArgs e)
         {
-            
-            String SeeLate = "DELETE FROM thongBao WHERE id_User = '" + _dtgrtViewMess.Rows[numrowMess].Cells[0].Value.ToString() + "' AND tieuDe = N'" + _dtgrtViewMess.Rows[numrowMess].Cells[3].Value.ToString() + "' AND state = -3";
-            class_CRUD dataSend = new class_CRUD();
-            dataSend.handleData(SeeLate);
-            _buttonSeeNew_Click(sender, e);
+            try
+            {
+                String SeeLate = "DELETE FROM thongBao WHERE id_User = '" + _dtgrtViewMess.Rows[numrowMess].Cells[0].Value.ToString() + "' AND tieuDe = N'" + _dtgrtViewMess.Rows[numrowMess].Cells[3].Value.ToString() + "' AND state = -3";
+                class_CRUD dataSend = new class_CRUD();
+                dataSend.handleData(SeeLate);
+                _buttonSeeNew_Click(sender, e);
+            }
+            catch {
+
+            }
         }
 
         private void _dtgrtViewMess_CellClick(object sender, DataGridViewCellEventArgs e)

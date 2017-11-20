@@ -55,22 +55,38 @@ namespace QuanLyNhanSu
                 class_CRUD handle = new class_CRUD();
                 if (_chBoxSendAll.Checked == true)
                 {
+
                     String sendAll = "INSERT INTO thongBao (id_User, tieuDe, noiDung, kieuSend, state) VALUES('" + getID(nameAcc) + "', N'" + _tBoxTieuDe.Text + "', N'" + _tBoxContent.Text + "', N'Thông Báo', '-2')";
                     handle.handleData(sendAll);
+                    this.Close();
                 }
                 else
                 {
                     try
                     {
-                        String SendId = "INSERT INTO thongBao(id_User, tieuDe, noiDung, kieuSend, state) VALUES('" + _tBoxIDSendTo.Text + "', N'" + _tBoxTieuDe.Text + "', N'" + _tBoxContent.Text + "', N'Thông Báo', '-3')";
-                        handle.handleData(SendId);
+                        String CheckData = "SELECT id_User FROM _acc WHERE id_User = '" + _tBoxIDSendTo.Text + "'";
+                        if (handle.checkData(CheckData) == true)
+                        {
+                            String SendId = "INSERT INTO thongBao(id_User, tieuDe, noiDung, kieuSend, state) VALUES('" + _tBoxIDSendTo.Text + "', N'" + _tBoxTieuDe.Text + "', N'" + _tBoxContent.Text + "', N'Thông Báo', '-3')";
+                            handle.handleData(SendId);
+                            this.Close();
+                        }
+                        else if(_tBoxContent.Text == "" || _tBoxTieuDe.Text == "")
+                        {
+                            _labelMessWErr.Text = "Vui lòng nhập đủ thông tin.";
+                        }
+ 
+                        else
+                        {
+                            _labelMessWErr.Text = "Vui lòng nhập đúng ID.";
+                        }
                     }
                     catch
                     {
-                        _labelMessWErr.Text = "Vui lòng nhập đúng ID.";
+                         
                     }
                 }
-                this.Close();
+                
             }
             catch
             {

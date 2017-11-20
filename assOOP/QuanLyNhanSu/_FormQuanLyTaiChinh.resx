@@ -117,6 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="_tBoxTutorial.Text" xml:space="preserve">
+    <value>I-Giới thiệu về phần mềm Quản lý nhân sự:
+	Phần mềm Quản lý nhân sự là một giải pháp tuyệt vời dành cho các công ty lớn có nhiều chi nhánh. Phần mềm này cũng cấp các chức năng giúp cho các nhà quản lý thực hiện công việc và vận hành công ty một cách tốt hơn. Phần mềm Quản lý nhân sự được xây dựng để phục vụ chính cho nhân viên và quản lý.
+	+ Nhân viên: Phần mềm cung cấp tài khoản giúp nhân viên có thể cung cấp, thay đổi thông tin cá nhân( Họ tên, Ngày sinh, Địa chỉ, CMND,…) có các nhà quản lý. Ngoài ra, thông qua phần mềm, nhân viên có thể nắm bắt được lương của mình và nhận thông bảo, chỉ thị từ quản lý cũng như hệ thống.
+	+ Quản lý: Phần mềm cung cấp tài khoản giúp các nhà quản lý có thể nắm bắt được tình hình nhân sự (thông tin cá nhân, lương, các khoản thưởng, phạt,…) từ đó có thể thống kê tính toán tài chình và có thể điều chỉnh lại tài chính một cách thích hợp, vạch ra những hướng đi đúng đắn cho công ty.
+Đầu tiên, đây là giao diện khi khởi động phần mềm
+Đăng ký tài khoản:
+Nếu chưa có tài khoản, bạn có thể click vào “Đăng ký” để thực hiện công việc đăng ký tài khoản:
+Khi đăng ký, bạn có thể chọn chức vụ: nhân viên, quản lý nhân sự hoặc quản lý tài chính tương đương với các chức năng khác nhau mà chương trình cung cấp cho tài khoản. Bạn điền đầy đủ thông tin của mình vào các mục trong bảng Đăng ký, sau đó nhấn vào ô “Đăng ký” để hoàn tất việc đăng ký tài khoản.
+ 
+
+Quên mật khẩu.
+	Trong trường hợp bạn quên đi mật khẩu để đăng nhập vào tài khoản, bạn có thể “click” vào ô “Quên mật khẩu”, bảng sau sẽ hiện lên
+Bạn điền đầy đủ các thông tin trong bảng theo yêu cầu rồi nhấn vào ô “Gửi yêu cầu”. Sau khi gửi yêu cầu, bạn vui long đến bộ phận nhân sự để xác nhận, hoàn tất việc lấy lại tài khoản.
+II-Quản lý tài chính
+Giao diện sau khi đăng nhập với chức vụ “Quản lý tài chính”:
+Khi đăng nhập với chức vụ Quản lý tài chính, bạn được cung cấp một số chức năng chính sau đây: 
+
+1, Quản lý tài khoản:
+Chức năng Quản lý tài khoản giúp bạn có thể xem thông tin tài khoản của mình, đổi mật khẩu và sửa đổi thông tin tài khoản. Khi nhấn vào các yêu cầu đó sẽ xuất hiện các bảng như hình trên, bạn điền đầy đủ thông tin chính xác rồi nhấn vào Thay đổi/Cập nhật để hoàn tất thao tác.
+
+2, Quản lý lương nhân viên:
+	Chức năng Quản lý lương nhân viên cho phép bạn xem danh sách lương, các khoản thưởng, phạt của nhân viên. 
+                Ngoài ra, phần mềm còn cho phép thực hiện chức năng tìm kiếm trên danh sách. Trong mục này, bạn có thể thực hiện các thao tác: 
+    + Thanh toán, Thưởng, Phạt, Sửa lương tổng.
+                Khi nhấn vào các ô đó, sẽ xuất hiện các bảng như hình bên dưới, bạn điển đầy đủ các thông tin rồi nhấn OK(Cập nhật) để hoàn tất các thao tác.
+
+3, Thống kê:
+ Ở chức năng thống kê, ban có thể chọn ở mục “thống kê theo:” rồi nhấn “Xem” để xem biểu đồ kết quả theo 2 kiểu là biểu đồ cột và biểu đồ quạt. 
+
+4, Thông báo: 
+	Phần mềm cũng cung cấp cho tài khoản các chức năng thao tác với thông báo:
+
+Ở chức năng này, bạn có thể xem các thông báo mới khi Click vào “Thông báo mới”, và có thể thực hiện thao tác Xóa hoặc Gửi phản hồi với các thông báo đó. 
+Bạn cũng có thể “Gửi thông báo” , xuất hiện bảng như hình trên, bạn điền các thông tin về ID người nhận, tiêu đề, nội dung và nhấn “Gửi” để hoàn tất việc gửi thông báo.
+
+5, Trợ giúp:
+	Bạn có thể tham khảo ở mục Trợ giúp khi gặp những khó khăn trong quá trình sử dụng chương trình.
+</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

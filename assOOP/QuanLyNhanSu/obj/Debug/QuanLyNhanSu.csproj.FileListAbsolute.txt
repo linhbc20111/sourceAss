@@ -24,3 +24,29 @@ E:\Cau truc du lieu va giai thuat\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhan
 E:\Cau truc du lieu va giai thuat\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormFine.resources
 E:\Cau truc du lieu va giai thuat\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormNhanVien.resources
 E:\Cau truc du lieu va giai thuat\QuanLyNhanSu\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormChuyen.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe.config
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.exe
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.pdb
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.exe
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\bin\Debug\QuanLyNhanSu.pdb
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csprojResolveAssemblyReference.cache
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Main.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormBonus.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormChangeAcc.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormChangeInfo.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormChangePass.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormChuyen.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormDieuKhoan.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormEditSalaryAll.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormFine.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormForgetPass.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormLogin.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.Properties.Resources.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormMessComplete.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormMessToChangeInfo.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormNhanVien.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormQuanLyTaiChinh.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormSendFeedBack.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormSendMess.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu._FormSignUp.resources
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Debug\QuanLyNhanSu.csproj.GenerateResource.Cache

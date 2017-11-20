@@ -12,42 +12,58 @@ namespace QuanLyNhanSu
 {
     public partial class _FormQuanLyTaiChinh : Form
     {
-        String nameAcc;
-        int numrowMess, a = 0, numrowSalary;
+        String nameAcc;                                     // it is static value , transmitted from login form'
+
+        int numrowMess, a = 0, numrowSalary;                // number row cell messenger and salary in data gritview, handle data when cell click , value a to check read
         public _FormQuanLyTaiChinh()
         {
             InitializeComponent();
         }
-
+        /*
+         *Constructor have a argument is string Name acc to receive name acc from Login form
+             
+         */
         public _FormQuanLyTaiChinh(String nameAcc):this()
         {
-            this.nameAcc = nameAcc;
+            this.nameAcc = nameAcc;     // transmitted from login form and name acc riceive
         }
+
+
+        /* 
+         * Function getId use command SQL to get Id if have name acc 
+         */
 
         public String getID(String nameAcc)
         {
             
-            class_CRUD get = new class_CRUD();
-            String id = "SELECT id_User FROM _acc WHERE tenTaiKhoan = '" + nameAcc + "'";
-            DataTable idtb = get.uploadData(id);
+            class_CRUD get = new class_CRUD();                                            // creat class to up data
+            String id = "SELECT id_User FROM _acc WHERE tenTaiKhoan = '" + nameAcc + "'"; // comand SQL
+            DataTable idtb = get.uploadData(id);                                          // creat data table to store data 
 
-            return idtb.Rows[0][0].ToString();
+            return idtb.Rows[0][0].ToString();                                            // return ID (string)
 
         }
 
-
+        /* 
+         * Function get pass as function get ID
+         * 
+         
+         */
         public String getpass(String nameAcc)
         {
 
-            class_CRUD get = new class_CRUD();
-            String pass = "SELECT matkhau FROM _acc WHERE tenTaiKhoan = '" + nameAcc + "'";
+            class_CRUD get = new class_CRUD();                                              // creat class to up data
+            String pass = "SELECT matkhau FROM _acc WHERE tenTaiKhoan = '" + nameAcc + "'"; // command SQL
             DataTable idtb = get.uploadData(pass);
-
-            return idtb.Rows[0][0].ToString();
+                        
+            return idtb.Rows[0][0].ToString();                                              // return pass (string)
 
 
         }
-
+        /* 
+         * Up data to data gritview, chart
+         * Set value defaul for check box  
+         */
         private void _FormQuanLyTaiChinh_Load(object sender, EventArgs e)
         {
             try
@@ -63,7 +79,7 @@ namespace QuanLyNhanSu
                 String LoadSend = "SELECT thongbao.id_User, lastName, kieuSend, tieuDe FROM thongBao, _user WHERE thongBao.id_User = _user.id_User AND (state = -2 OR thongBao.id_User = '" + getID(nameAcc) + "')";
                 class_CRUD dataSend = new class_CRUD();
                 _dtgrtViewMess.DataSource = dataSend.uploadData(LoadSend);
-
+                // Set header for cell 
                 _dtgrtViewMess.Columns[0].HeaderText = "Mã Số";
                 _dtgrtViewMess.Columns[1].HeaderText = "Tên";
                 _dtgrtViewMess.Columns[2].HeaderText = "Kiểu";
@@ -72,7 +88,7 @@ namespace QuanLyNhanSu
 
                 String LoadSalary = "SELECT _luongCaNhan.id_User, lastName, quyensudung, heSo, [luong/ngay], ngayBatdauthang FROM _acc, _luongCaNhan, _user, _luongTong WHERE _luongCaNhan.id_User = _user.id_User AND _user.id_User = _acc.id_User AND trangthai = '1'";
                 _dtgrViewSalary.DataSource = dataSend.uploadData(LoadSalary);
-
+                // set header for cell
                 _dtgrViewSalary.Columns[0].HeaderText = "Mã Số";
                 _dtgrViewSalary.Columns[1].HeaderText = "Tên";
                 _dtgrViewSalary.Columns[2].HeaderText = "Chức Vụ";
@@ -90,6 +106,7 @@ namespace QuanLyNhanSu
                 column = updata.uploadData(loadID);
                 this._tBoxID.Text = column.Rows[0][0].ToString();
 
+                // SQL command to load data
                 String loadFirstName = "SELECT firstName FROM _user WHERE id_User = '" + _tBoxID.Text + "'";
                 String loadLastName = "SELECT lastName FROM _user WHERE id_User = '" + _tBoxID.Text + "'";
                 String loadbirthDay = "SELECT birthDay FROM _user WHERE id_User = '" + _tBoxID.Text + "'";
@@ -97,6 +114,8 @@ namespace QuanLyNhanSu
                 String loadAddress = "SELECT Address FROM _user WHERE id_User = '" + _tBoxID.Text + "'";
                 String loadEmail = "SELECT Email FROM _user WHERE id_User = '" + _tBoxID.Text + "'";
 
+
+                // Load data to text box 
                 column = updata.uploadData(loadFirstName);
                 this._tBoxFirstName.Text = column.Rows[0][0].ToString();
 
