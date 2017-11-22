@@ -91,7 +91,6 @@
             this._labelFindType2 = new System.Windows.Forms.Label();
             this._grBoxList = new System.Windows.Forms.GroupBox();
             this._buttonListAll = new System.Windows.Forms.Button();
-            this._dtgrViewSalary = new System.Windows.Forms.DataGridView();
             this._grBoxHandle = new System.Windows.Forms.GroupBox();
             this._buttonEditAll = new System.Windows.Forms.Button();
             this._buttonFine = new System.Windows.Forms.Button();
@@ -121,11 +120,13 @@
             this._buttonSeeNew = new System.Windows.Forms.Button();
             this._dtgrtViewMess = new System.Windows.Forms.DataGridView();
             this._tabhelp = new System.Windows.Forms.TabPage();
+            this._labelTotorial = new System.Windows.Forms.Label();
+            this._tBoxTutorial = new System.Windows.Forms.TextBox();
             this._buttonDangXuat = new System.Windows.Forms.Button();
             this._labelHello = new System.Windows.Forms.Label();
             this._labelchuyenCV = new System.Windows.Forms.Label();
-            this._labelTotorial = new System.Windows.Forms.Label();
-            this._tBoxTutorial = new System.Windows.Forms.TextBox();
+            this._dtgrViewSalary = new System.Windows.Forms.DataGridView();
+            this.@__buttonngayNghi = new System.Windows.Forms.Button();
             this._quanly.SuspendLayout();
             this._quanlyAccount.SuspendLayout();
             this._grBoxInfo.SuspendLayout();
@@ -135,7 +136,6 @@
             this._grBoxInfoWait.SuspendLayout();
             this._grBoxFindList.SuspendLayout();
             this._grBoxList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._dtgrViewSalary)).BeginInit();
             this._grBoxHandle.SuspendLayout();
             this._timkiemThongKe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._chartStatisticCot)).BeginInit();
@@ -146,6 +146,7 @@
             this._grBoxChoseListMess.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dtgrtViewMess)).BeginInit();
             this._tabhelp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._dtgrViewSalary)).BeginInit();
             this.SuspendLayout();
             // 
             // _labelQuanLyTC
@@ -459,6 +460,7 @@
             // _grBoxInfoWait
             // 
             this._grBoxInfoWait.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this._grBoxInfoWait.Controls.Add(this.@__buttonngayNghi);
             this._grBoxInfoWait.Controls.Add(this._tBoxFine);
             this._grBoxInfoWait.Controls.Add(this._tBoxBonus);
             this._grBoxInfoWait.Controls.Add(this._labeFine);
@@ -652,12 +654,11 @@
             // 
             // _tBoxnumRelax
             // 
-            this._tBoxnumRelax.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._tBoxnumRelax.BackColor = System.Drawing.SystemColors.ButtonFace;
             this._tBoxnumRelax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this._tBoxnumRelax.Location = new System.Drawing.Point(98, 168);
             this._tBoxnumRelax.Name = "_tBoxnumRelax";
-            this._tBoxnumRelax.ReadOnly = true;
-            this._tBoxnumRelax.Size = new System.Drawing.Size(161, 22);
+            this._tBoxnumRelax.Size = new System.Drawing.Size(80, 22);
             this._tBoxnumRelax.TabIndex = 1;
             // 
             // _tBoxID2
@@ -774,17 +775,6 @@
             this._buttonListAll.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this._buttonListAll.UseVisualStyleBackColor = false;
             this._buttonListAll.Click += new System.EventHandler(this._buttonListAll_Click);
-            // 
-            // _dtgrViewSalary
-            // 
-            this._dtgrViewSalary.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this._dtgrViewSalary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._dtgrViewSalary.Location = new System.Drawing.Point(6, 101);
-            this._dtgrViewSalary.Name = "_dtgrViewSalary";
-            this._dtgrViewSalary.ReadOnly = true;
-            this._dtgrViewSalary.Size = new System.Drawing.Size(643, 478);
-            this._dtgrViewSalary.TabIndex = 1;
-            this._dtgrViewSalary.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._dtgrViewSalary_CellClick);
             // 
             // _grBoxHandle
             // 
@@ -1169,6 +1159,28 @@
             this._tabhelp.TabIndex = 5;
             this._tabhelp.Text = "         Trợ Giúp         ";
             // 
+            // _labelTotorial
+            // 
+            this._labelTotorial.AutoSize = true;
+            this._labelTotorial.Font = new System.Drawing.Font("Sitka Small", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this._labelTotorial.Location = new System.Drawing.Point(413, 18);
+            this._labelTotorial.Name = "_labelTotorial";
+            this._labelTotorial.Size = new System.Drawing.Size(120, 28);
+            this._labelTotorial.TabIndex = 3;
+            this._labelTotorial.Text = "Hướng Dẫn";
+            // 
+            // _tBoxTutorial
+            // 
+            this._tBoxTutorial.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._tBoxTutorial.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this._tBoxTutorial.Location = new System.Drawing.Point(20, 80);
+            this._tBoxTutorial.Multiline = true;
+            this._tBoxTutorial.Name = "_tBoxTutorial";
+            this._tBoxTutorial.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this._tBoxTutorial.Size = new System.Drawing.Size(910, 488);
+            this._tBoxTutorial.TabIndex = 2;
+            this._tBoxTutorial.Text = resources.GetString("_tBoxTutorial.Text");
+            // 
             // _buttonDangXuat
             // 
             this._buttonDangXuat.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -1202,27 +1214,26 @@
             this._labelchuyenCV.Text = "Chuyển Chức Vụ";
             this._labelchuyenCV.Click += new System.EventHandler(this._labelchuyenCV_Click);
             // 
-            // _labelTotorial
+            // _dtgrViewSalary
             // 
-            this._labelTotorial.AutoSize = true;
-            this._labelTotorial.Font = new System.Drawing.Font("Sitka Small", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this._labelTotorial.Location = new System.Drawing.Point(413, 18);
-            this._labelTotorial.Name = "_labelTotorial";
-            this._labelTotorial.Size = new System.Drawing.Size(120, 28);
-            this._labelTotorial.TabIndex = 3;
-            this._labelTotorial.Text = "Hướng Dẫn";
+            this._dtgrViewSalary.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this._dtgrViewSalary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._dtgrViewSalary.Location = new System.Drawing.Point(6, 101);
+            this._dtgrViewSalary.Name = "_dtgrViewSalary";
+            this._dtgrViewSalary.ReadOnly = true;
+            this._dtgrViewSalary.Size = new System.Drawing.Size(643, 478);
+            this._dtgrViewSalary.TabIndex = 1;
+            this._dtgrViewSalary.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._dtgrViewSalary_CellClick);
             // 
-            // _tBoxTutorial
+            // __buttonngayNghi
             // 
-            this._tBoxTutorial.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this._tBoxTutorial.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this._tBoxTutorial.Location = new System.Drawing.Point(20, 80);
-            this._tBoxTutorial.Multiline = true;
-            this._tBoxTutorial.Name = "_tBoxTutorial";
-            this._tBoxTutorial.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this._tBoxTutorial.Size = new System.Drawing.Size(910, 488);
-            this._tBoxTutorial.TabIndex = 2;
-            this._tBoxTutorial.Text = resources.GetString("_tBoxTutorial.Text");
+            this.@__buttonngayNghi.Location = new System.Drawing.Point(184, 167);
+            this.@__buttonngayNghi.Name = "__buttonngayNghi";
+            this.@__buttonngayNghi.Size = new System.Drawing.Size(75, 23);
+            this.@__buttonngayNghi.TabIndex = 21;
+            this.@__buttonngayNghi.Text = "Cập nhật";
+            this.@__buttonngayNghi.UseVisualStyleBackColor = true;
+            this.@__buttonngayNghi.Click += new System.EventHandler(this.@__buttonngayNghi_Click);
             // 
             // _FormQuanLyTaiChinh
             // 
@@ -1252,7 +1263,6 @@
             this._grBoxFindList.ResumeLayout(false);
             this._grBoxFindList.PerformLayout();
             this._grBoxList.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this._dtgrViewSalary)).EndInit();
             this._grBoxHandle.ResumeLayout(false);
             this._timkiemThongKe.ResumeLayout(false);
             this._timkiemThongKe.PerformLayout();
@@ -1266,6 +1276,7 @@
             ((System.ComponentModel.ISupportInitialize)(this._dtgrtViewMess)).EndInit();
             this._tabhelp.ResumeLayout(false);
             this._tabhelp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._dtgrViewSalary)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1323,7 +1334,6 @@
         private System.Windows.Forms.Label _labelFindType2;
         private System.Windows.Forms.GroupBox _grBoxList;
         private System.Windows.Forms.Button _buttonListAll;
-        private System.Windows.Forms.DataGridView _dtgrViewSalary;
         private System.Windows.Forms.GroupBox _grBoxHandle;
         private System.Windows.Forms.Button _buttonEditAll;
         private System.Windows.Forms.Button _buttonFine;
@@ -1362,5 +1372,7 @@
         private System.Windows.Forms.Label _labelchuyenCV;
         private System.Windows.Forms.Label _labelTotorial;
         private System.Windows.Forms.TextBox _tBoxTutorial;
+        private System.Windows.Forms.Button __buttonngayNghi;
+        private System.Windows.Forms.DataGridView _dtgrViewSalary;
     }
 }

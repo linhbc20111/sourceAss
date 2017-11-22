@@ -13,19 +13,26 @@ namespace QuanLyNhanSu
     public partial class _FormChuyen : Form
     {
 
-        String nameAcc, pass;
+        private String nameAcc, pass;                                                               // value to store name acc and pass use to tranmist
+
+
         public _FormChuyen()
         {
             InitializeComponent();
         }
 
+        /*
+         * Function constructor receive two string is name acc and pass
+         * Get string and set 
+         */
         public _FormChuyen(String nameAcc, String pass) : this()
         {
-            this.nameAcc = nameAcc;
-            this.pass = pass;
+            this.nameAcc = nameAcc;                                                                 // set name acc
+            this.pass = pass;                                                                       // set pass                                       
         }
 
-        private void _chBoxQuanLy_CheckedChanged(object sender, EventArgs e)
+
+        private void _chBoxQuanLy_CheckedChanged(object sender, EventArgs e)                        // check chuc vu
         {
             if (_chBoxQuanLy.Checked == true)
             {
@@ -37,7 +44,7 @@ namespace QuanLyNhanSu
             }
         }
 
-        private void _chBoxNhanVien_CheckedChanged(object sender, EventArgs e)
+        private void _chBoxNhanVien_CheckedChanged(object sender, EventArgs e)                      // check chuc vu
         {
             if (_chBoxNhanVien.Checked == true)
             {
@@ -50,15 +57,20 @@ namespace QuanLyNhanSu
             
         }
 
+
+        /*
+         * Funtion is a event
+         * Fuvtion will call form with chuc vu tuong ung
+         */
         private void _buttonChuyen_Click(object sender, EventArgs e)
         {
-            if (_chBoxQuanLy.Text == "Quản Lý Nhân Sự" && _chBoxQuanLy.Checked == true)
+            if (_chBoxQuanLy.Text == "Quản Lý Nhân Sự" && _chBoxQuanLy.Checked == true)                 // check QLNS
             {
                 Main f = new Main(nameAcc);
                 this.Hide();
                 f.Show();
             }
-            else if (_chBoxQuanLy.Text == "Quản Lý Tài Chính" && _chBoxQuanLy.Checked == true)
+            else if (_chBoxQuanLy.Text == "Quản Lý Tài Chính" && _chBoxQuanLy.Checked == true)          // check QLTC
             {
                 _FormQuanLyTaiChinh f = new _FormQuanLyTaiChinh(nameAcc);
                 this.Hide();
@@ -67,35 +79,39 @@ namespace QuanLyNhanSu
             }
             else
             {
-                _FormNhanVien f = new _FormNhanVien(nameAcc);
+                _FormNhanVien f = new _FormNhanVien(nameAcc);                                           // check NV
                 this.Hide();
 
                 f.Show();
             }
         }
 
+        /*
+         * Fuction check chuc vu and hide chuc vu not need
+         */
         private void _FormChuyen_Load(object sender, EventArgs e)
         {
             _chBoxQuanLy.Checked = true;
             _chBoxNhanVien.Checked = false;
 
+            // Command SQL to check chuc vu
             String dangnhapQLNS = "SELECT * FROM _acc WHERE tenTaikhoan = N'" + nameAcc + "' AND matkhau = N'" + pass + "' COLLATE SQL_Latin1_General_CP1_CS_AS AND quyensudung = N'Quản Lý Nhân Sự' AND trangthai = '1'";
             String dangnhapNV = "SELECT * FROM _acc WHERE tenTaikhoan = N'" + nameAcc + "' AND matkhau = N'" + pass + "' COLLATE SQL_Latin1_General_CP1_CS_AS AND quyensudung = N'Nhân Viên' AND trangthai = '1'";
             String dangnhapQLTC = "SELECT * FROM _acc WHERE tenTaikhoan = N'" + nameAcc + "' AND matkhau = N'" + pass + "' COLLATE SQL_Latin1_General_CP1_CS_AS AND quyensudung = N'Quản Lý Tài Chính' AND trangthai = '1'";
             class_CRUD crud = new class_CRUD();
 
 
-
-            if (crud.exedata(dangnhapQLNS))
+            // check
+            if (crud.exedata(dangnhapQLNS))                             // check QLNS
             {
                 _chBoxQuanLy.Text = "Quản Lý Nhân Sự";
             }
-            else if (crud.exedata(dangnhapQLTC))
+            else if (crud.exedata(dangnhapQLTC))                        // check QLTC
             {
 
                 _chBoxQuanLy.Text = "Quản Lý Tài Chính";
             }
-            else if (crud.exedata(dangnhapNV))
+            else if (crud.exedata(dangnhapNV))                          // check NV
             {
                 _chBoxQuanLy.Hide();
                 _chBoxQuanLy.Checked = false;

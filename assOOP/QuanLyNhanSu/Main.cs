@@ -12,44 +12,52 @@ namespace QuanLyNhanSu
 {
     public partial class Main : Form
     {
-        private int numrow, numrowWait, numrowMess;
-        private int i = 0, j = 0, a = 0;
-        private String nameAcc;
+        private int numrow, numrowWait, numrowMess;                                     // int to store num row
+        private int i = 0, j = 0, a = 0;                                                // global value
+        private String nameAcc;                                                         // string to store name acc
         public Main()
         {
             InitializeComponent();
         }
 
+        // Constructor receive a tring is name acc and set this name acc
         public Main(String mes) : this()
         {
-            this.nameAcc = mes;
+            this.nameAcc = mes;                                                         // set name acc
         }
 
+        // Fuction get name acc return a string is name acc
         public String getnameAcc()
         {
             return this.nameAcc;
         }
 
+
+        //Function get pass receive a string is name acc and return a string is pass of acc
         public String getpass(String nameAcc)
         {
 
-            class_CRUD get = new class_CRUD();
-            String pass = "SELECT matkhau FROM _acc WHERE tenTaiKhoan = '" + nameAcc + "'";
-            DataTable idtb = get.uploadData(pass);
+            class_CRUD get = new class_CRUD();                                          // class to upload data
+            String pass = "SELECT matkhau FROM _acc WHERE tenTaiKhoan = '" + nameAcc + "'";     // command SQL to upload
+            DataTable idtb = get.uploadData(pass);                                      // upload data
 
-            return idtb.Rows[0][0].ToString();
+            return idtb.Rows[0][0].ToString();                                          // return
 
 
         }
 
+
+        // Event when open Form main
         private void Main_Load(object sender, EventArgs e)
         {
             try
             {
                 String LoadSend = "SELECT thongbao.id_User, lastName, kieuSend, tieuDe FROM thongBao, _user WHERE thongBao.id_User = _user.id_User AND state > -2";
-                class_CRUD dataSend = new class_CRUD();
-                _dtgrtViewMess.DataSource = dataSend.uploadData(LoadSend);
+                class_CRUD dataSend = new class_CRUD();                                 // class to upload data
+                _dtgrtViewMess.DataSource = dataSend.uploadData(LoadSend);              // fill data into datagritview
 
+
+                // Set name header for datagritview
                 _dtgrtViewMess.Columns[0].HeaderText = "Mã Số";
                 _dtgrtViewMess.Columns[1].HeaderText = "Tên";
                 _dtgrtViewMess.Columns[2].HeaderText = "Kiểu";
@@ -59,35 +67,49 @@ namespace QuanLyNhanSu
 
                 j = 0; // To know now show list 
 
+
+                // Set value for check box
                 _chBoxChoseAll.Checked = false;
                 _chBoxChoseOne.Checked = true;
 
-
+                // get name acc
                 nameAcc = getnameAcc();
-                String loadacc = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE _user.id_User = _acc.id_User AND trangthai = '1'";
-                String loadaccWait = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE trangthai < 1 AND _user.id_User = _acc.id_User";
-                class_CRUD loadData = new class_CRUD();
-                _dtgrViewAcc.DataSource = loadData.uploadData(loadacc);
-                _dtgrViewWait.DataSource = loadData.uploadData(loadaccWait);
 
+                // Command to upload data
+                String loadacc = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE _user.id_User = _acc.id_User AND trangthai = '1'";
+                String loadaccWait = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE trangthai < 1 AND _user.id_User = _acc.id_User";
+                class_CRUD loadData = new class_CRUD();                             // class to upload data
+                _dtgrViewAcc.DataSource = loadData.uploadData(loadacc);             // fill data gritview
+                _dtgrViewWait.DataSource = loadData.uploadData(loadaccWait);        // fill data
+
+
+                // Set name header for datagritview 
                 _dtgrViewAcc.Columns[0].HeaderText = "Mã Số";
                 _dtgrViewAcc.Columns[1].HeaderText = "Tài Khoản";
                 _dtgrViewAcc.Columns[2].HeaderText = "Họ Đệm";
                 _dtgrViewAcc.Columns[3].HeaderText = "Tên";
                 _dtgrViewAcc.Columns[4].HeaderText = "Mật Khẩu";
-                _dtgrViewAcc.Columns[5].HeaderText = "Trạng Thái";
+                _dtgrViewAcc.Columns[5].HeaderText = "Chức Vụ";
 
+
+                // Set name header for datagritview Wait
                 _dtgrViewWait.Columns[0].HeaderText = "Mã Số";
                 _dtgrViewWait.Columns[1].HeaderText = "Tài Khoản";
                 _dtgrViewWait.Columns[2].HeaderText = "Họ Đệm";
                 _dtgrViewWait.Columns[3].HeaderText = "Tên";
                 _dtgrViewWait.Columns[4].HeaderText = "Mật Khẩu";
-                _dtgrViewWait.Columns[5].HeaderText = "Trạng Thái";
+                _dtgrViewWait.Columns[5].HeaderText = "Chức Vụ";
 
+
+                // Command to upload data
                 String loadID = "SELECT id_User FROM _acc WHERE tenTaiKhoan = '" + nameAcc + "'";
+                // class to upload data
                 DataTable data = new DataTable();
+                // handle data
                 data = loadData.uploadData(loadID);
+                // get ID
                 String ID = data.Rows[0][0].ToString();
+                // Command SQL to upload data
                 String loadname = "SELECT lastName FROM _user WHERE id_User = '" + ID + "'";
                 data = loadData.uploadData(loadname);
                 this._labelHello.Text = "Xin chào " + data.Rows[0][0].ToString();
@@ -96,13 +118,13 @@ namespace QuanLyNhanSu
 
                 // Load bieu do
                 String datachart = "SELECT birthDay FROM _user, _acc WHERE _user.id_User = _acc.id_User AND trangthai = 1";
-                
+
                 class_CRUD updata = new class_CRUD();
                 DataTable datatb;
                 int _20down = 0, _20x = 0, _30x = 0, _40x = 0, _50up = 0;
                 datatb = updata.uploadData(datachart);
-                
 
+                // Solve data to fill into bieu do
                 foreach (var series in _chartStatistic.Series)
                 {
                     series.Points.Clear();
@@ -182,31 +204,37 @@ namespace QuanLyNhanSu
             }
         }
 
+
+        // Event when click button change pass
         private void _buttonChangePass_Click(object sender, EventArgs e)
         {
-            _FormChangePass f = new _FormChangePass(nameAcc);
+            _FormChangePass f = new _FormChangePass(nameAcc);                       // call form
             f.Show();
         }
 
+
+        // Event when click button change info
         private void _buttonChangeInfo_Click(object sender, EventArgs e)
         {
-            _FormChangeInfo f = new _FormChangeInfo(nameAcc);
+            _FormChangeInfo f = new _FormChangeInfo(nameAcc);                       // call form
 
             f.Show();
         }
 
-       
 
+        // Event when click button dang xuat
         private void _buttonDangXuat_Click(object sender, EventArgs e)
         {
-            _FormLogin _frmFormLogin = new _FormLogin();
+            _FormLogin _frmFormLogin = new _FormLogin();                            // call form
             _frmFormLogin.Show();
             this.Close();
         }
 
+
+        // Event when click button add acc
         private void _buttonAddAcc_Click(object sender, EventArgs e)
         {
-            _FormSignUp f = new _FormSignUp();
+            _FormSignUp f = new _FormSignUp();                                      // call form
             f.Show();
         }
 
@@ -215,37 +243,43 @@ namespace QuanLyNhanSu
 
         }
 
+
+        // Event when click button complete
         private void _buttonComplete_Click(object sender, EventArgs e)
         {
             if (_tBoxAddress.Text == "" || _dateBoxBDay.Text == "" || _tBoxCMND.Text == "" || _tBoxFirstName.Text == "" || _tBoxLastName.Text == "" || _tBoxEmail.Text == "")
             {
-                _labelMess.Text = "Vui lòng điền đủ thông tin.";
+                _labelMess.Text = "Vui lòng điền đủ thông tin.";                    // Mess when text box null
             }
 
             else
             {
-                class_CRUD changeInfo = new class_CRUD();
+                class_CRUD changeInfo = new class_CRUD();                           // class to handle data
                 String updateData = "UPDATE _user SET firstName = N'" + _tBoxFirstName.Text + "', lastName = N'" + _tBoxLastName.Text + "', birthDay = '" + _dateBoxBDay.Value.ToString("yyyy/MM/dd") + "', Address = N'" + _tBoxAddress.Text + "', CMND = '" + _tBoxCMND.Text + "', Email = N'" + _tBoxEmail.Text + "' WHERE id_User = N'" + _tBoxID.Text + "'";
-                if (changeInfo.handleData(updateData))
+                if (changeInfo.handleData(updateData))                              // handle data
                 {
-                    _labelMess.Text = "Cập nhật thành công";
+                    _labelMess.Text = "Cập nhật thành công";                        // Mess when complete
                     Main_Load(sender, e);
                 }
                 else
                 {
-                    _labelMess.Text = "Xảy ra lỗi trong lúc cập nhật.";
+                    _labelMess.Text = "Xảy ra lỗi trong lúc cập nhật.";             // Mess when error
                 }
             }
         }
 
+
+        // Event when click in datagritview
         private void _dtgrViewAcc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataTable column = new DataTable();
-            class_CRUD updata = new class_CRUD();
-            numrow = e.RowIndex;
+            DataTable column = new DataTable();                                     // data table to store data
+            class_CRUD updata = new class_CRUD();                                   // class to upload data
+            numrow = e.RowIndex;                                                    // num row click
             try
             {
                 _tBoxID.Text = _dtgrViewAcc.Rows[numrow].Cells[0].Value.ToString();
+
+                // Command to upload data from database to text box
                 String loadFirstName = "SELECT firstName FROM _user WHERE id_User = '" + _tBoxID.Text + "'";
                 String loadLastName = "SELECT lastName FROM _user WHERE id_User = '" + _tBoxID.Text + "'";
                 String loadbirthDay = "SELECT birthDay FROM _user WHERE id_User = '" + _tBoxID.Text + "'";
@@ -253,82 +287,86 @@ namespace QuanLyNhanSu
                 String loadAddress = "SELECT Address FROM _user WHERE id_User = '" + _tBoxID.Text + "'";
                 String loadEmail = "SELECT Email FROM _user WHERE id_User = '" + _tBoxID.Text + "'";
 
-                column = updata.uploadData(loadFirstName);
+                column = updata.uploadData(loadFirstName);                          // First name
                 this._tBoxFirstName.Text = column.Rows[0][0].ToString();
 
-                column = updata.uploadData(loadLastName);
+                column = updata.uploadData(loadLastName);                           // Last name
                 this._tBoxLastName.Text = column.Rows[0][0].ToString();
 
-                column = updata.uploadData(loadbirthDay);
+                column = updata.uploadData(loadbirthDay);                           // Birthday
                 this._dateBoxBDay.Text = column.Rows[0][0].ToString();
 
-                column = updata.uploadData(loadCMND);
-                this._tBoxCMND.Text = column.Rows[0][0].ToString(); 
+                column = updata.uploadData(loadCMND);                               // CMND
+                this._tBoxCMND.Text = column.Rows[0][0].ToString();
 
-                column = updata.uploadData(loadEmail);
+                column = updata.uploadData(loadEmail);                              // Email
                 this._tBoxEmail.Text = column.Rows[0][0].ToString();
 
-                column = updata.uploadData(loadAddress);
+                column = updata.uploadData(loadAddress);                            // Address
                 this._tBoxAddress.Text = column.Rows[0][0].ToString();
             }
             catch
             {
-
+                //Exception
             }
 
         }
 
-       
+        // Event whne click button find
         private void _buttonFind_Click(object sender, EventArgs e)
         {
-            String loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE _user.id_User = _acc.id_User AND trangthai = 1";
+            // Command to upload data
+            String loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE _user.id_User = _acc.id_User AND trangthai = 1";
             if (_cBoxChoseFind.Text == "" || _tBoxInfo.Text == "")
             {
                 _labelMessFind.Text = "Vui lòng điền đủ thông tin";
             }
             else
             {
+                // Set command for case
                 if (_cBoxChoseFind.Text == "ID")
                 {
-                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE trangthai = 1 AND _user.id_User = _acc.id_User AND _user.id_User LIKE '%" + _tBoxInfo.Text + "%'";       
+                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE trangthai = 1 AND _user.id_User = _acc.id_User AND _user.id_User LIKE '%" + _tBoxInfo.Text + "%'";
                 }
                 else if (_cBoxChoseFind.Text == "Tên")
                 {
-                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE trangthai = 1 AND _user.id_User = _acc.id_User AND lastName LIKE N'%" + _tBoxInfo.Text + "%'";
+                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE trangthai = 1 AND _user.id_User = _acc.id_User AND lastName LIKE N'%" + _tBoxInfo.Text + "%'";
                 }
                 else if (_cBoxChoseFind.Text == "Họ Đệm")
                 {
-                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE trangthai = 1 AND _user.id_User = _acc.id_User AND firstName LIKE N'%" + _tBoxInfo.Text + "%'";
+                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE trangthai = 1 AND _user.id_User = _acc.id_User AND firstName LIKE N'%" + _tBoxInfo.Text + "%'";
                 }
                 else if (_cBoxChoseFind.Text == "Địa Chỉ")
                 {
-                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE trangthai = 1 AND _user.id_User = _acc.id_User AND Address LIKE N'%" + _tBoxInfo.Text + "%'";
+                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE trangthai = 1 AND _user.id_User = _acc.id_User AND Address LIKE N'%" + _tBoxInfo.Text + "%'";
                 }
                 else if (_cBoxChoseFind.Text == "CMND")
                 {
-                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE trangthai = 1 AND _user.id_User = _acc.id_User AND CMND LIKE '%" + _tBoxInfo.Text + "%'";
+                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE trangthai = 1 AND _user.id_User = _acc.id_User AND CMND LIKE '%" + _tBoxInfo.Text + "%'";
                 }
                 else if (_cBoxChoseFind.Text == "Email")
                 {
-                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE trangthai =  1 AND _user.id_User = _acc.id_User AND Email LIKE N'%" + _tBoxInfo.Text + "%'";
+                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE trangthai =  1 AND _user.id_User = _acc.id_User AND Email LIKE N'%" + _tBoxInfo.Text + "%'";
                 }
                 else if (_cBoxChoseFind.Text == "Tên Tài Khoản")
                 {
-                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE trangthai =  1 AND _user.id_User = _acc.id_User AND tenTaiKhoan LIKE N'%" + _tBoxInfo.Text + "%'";
+                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE trangthai =  1 AND _user.id_User = _acc.id_User AND tenTaiKhoan LIKE N'%" + _tBoxInfo.Text + "%'";
                 }
-                
+
                 try
                 {
-                    class_CRUD loadData = new class_CRUD();
-                    _dtgrViewAcc.DataSource = loadData.uploadData(loadInfo);
+                    class_CRUD loadData = new class_CRUD();                 // class to upload data
+                    _dtgrViewAcc.DataSource = loadData.uploadData(loadInfo);// upload data
                 }
                 catch
                 {
-                    _labelMessContent.Text = "Không tìm thấy!";
+                    _labelMessContent.Text = "Không tìm thấy!";             // Mess when error
                 }
             }
         }
 
+
+        // Event when click key
         private void _tBoxInfo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -336,108 +374,122 @@ namespace QuanLyNhanSu
                 _buttonFind_Click(sender, e);
             }
         }
+
+        // Event when click button del acc
         private void _buttonDelAcc_Click(object sender, EventArgs e)
         {
             try
             {
                 if (i == 0)
                 {
-                    _FormMessToChangeInfo f = new _FormMessToChangeInfo(nameAcc);
+                    _FormMessToChangeInfo f = new _FormMessToChangeInfo(nameAcc);           // Requei pass
                     i = 1;
                     f.Show();
                 }
                 else
                 {
+                    // Command to handle data
                     String delAcc = "DELETE FROM _acc WHERE id_User = '" + _dtgrViewAcc.Rows[numrow].Cells[0].Value.ToString() + "'";
                     String delAcc1 = "DELETE FROM _user WHERE id_User = '" + _dtgrViewAcc.Rows[numrow].Cells[0].Value.ToString() + "'";
                     String delAcc2 = "DELETE FROM _luongCanhan WHERE id_User = '" + _dtgrViewAcc.Rows[numrow].Cells[0].Value.ToString() + "'";
+                    // class to handle data
                     class_CRUD delAccount = new class_CRUD();
-
+                    // handle data
                     delAccount.handleData(delAcc);
                     delAccount.handleData(delAcc1);
                     delAccount.handleData(delAcc2);
-                    Main_Load(sender, e);
+                    Main_Load(sender, e);                                                   // Load
 
                     i = 0;
                 }
             }
             catch
             {
-
+                // Exeption
             }
 
         }
 
+
+        // Event when click edit acc
         private void _buttonEditAcc_Click(object sender, EventArgs e)
         {
             try
             {
-                _FormChangeAcc f = new _FormChangeAcc(_dtgrViewAcc.Rows[numrow].Cells[0].Value.ToString());
+                _FormChangeAcc f = new _FormChangeAcc(_dtgrViewAcc.Rows[numrow].Cells[0].Value.ToString());   // call form and tranmist ID
                 f.Show();
             }
             catch
             {
-
-            }     
+                // Exception
+            }
         }
 
+
+        // Event when click button load
         private void _buttonLoad_Click(object sender, EventArgs e)
         {
-            this.Main_Load(sender, e);
+            this.Main_Load(sender, e);                                                  // Call function main load
         }
 
+
+        // Event when click button find
         private void _buttonFindContent_Click(object sender, EventArgs e)
         {
-            String loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE _user.id_User = _acc.id_User AND trangthai < 1";
+            // Command to upload info
+            String loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE _user.id_User = _acc.id_User AND trangthai < 1";
             if (_cBoxChoseType.Text == "" || _tBoxContent.Text == "")
             {
                 _labelMessContent.Text = "Vui lòng điền đủ thông tin";
             }
             else
             {
+                // Set command for case
                 if (_cBoxChoseType.Text == "ID")
                 {
-                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE _user.id_User = _acc.id_User AND _user.id_User LIKE '%" + _tBoxContent.Text + "%' AND trangthai < 1";
+                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE _user.id_User = _acc.id_User AND _user.id_User LIKE '%" + _tBoxContent.Text + "%' AND trangthai < 1";
                 }
                 else if (_cBoxChoseType.Text == "Tên")
                 {
-                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE _user.id_User = _acc.id_User AND lastName LIKE N'%" + _tBoxContent.Text + "%' AND trangthai < 1";
+                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE _user.id_User = _acc.id_User AND lastName LIKE N'%" + _tBoxContent.Text + "%' AND trangthai < 1";
                 }
                 else if (_cBoxChoseType.Text == "Họ Đệm")
                 {
-                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE _user.id_User = _acc.id_User AND firstName LIKE N'%" + _tBoxContent.Text + "%' AND trangthai < 1";
+                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE _user.id_User = _acc.id_User AND firstName LIKE N'%" + _tBoxContent.Text + "%' AND trangthai < 1";
                 }
                 else if (_cBoxChoseType.Text == "Địa Chỉ")
                 {
-                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE _user.id_User = _acc.id_User AND Address LIKE N'%" + _tBoxContent.Text + "%' AND trangthai < 1";
+                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE _user.id_User = _acc.id_User AND Address LIKE N'%" + _tBoxContent.Text + "%' AND trangthai < 1";
                 }
                 else if (_cBoxChoseType.Text == "CMND")
                 {
-                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE _user.id_User = _acc.id_User AND CMND LIKE '%" + _tBoxContent.Text + "%' AND trangthai < 1";
+                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE _user.id_User = _acc.id_User AND CMND LIKE '%" + _tBoxContent.Text + "%' AND trangthai < 1";
                 }
                 else if (_cBoxChoseType.Text == "Email")
                 {
-                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE _user.id_User = _acc.id_User AND Email LIKE N'%" + _tBoxContent.Text + "%' AND trangthai < 1";
+                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE _user.id_User = _acc.id_User AND Email LIKE N'%" + _tBoxContent.Text + "%' AND trangthai < 1";
                 }
                 else if (_cBoxChoseType.Text == "Tên Tài Khoản")
                 {
-                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE _user.id_User = _acc.id_User AND tenTaiKhoan LIKE N'%" + _tBoxContent.Text + "%' AND trangthai < 1";
+                    loadInfo = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE _user.id_User = _acc.id_User AND tenTaiKhoan LIKE N'%" + _tBoxContent.Text + "%' AND trangthai < 1";
                 }
                 try
                 {
-                    class_CRUD loadData = new class_CRUD();
-                    _dtgrViewWait.DataSource = loadData.uploadData(loadInfo);
+                    class_CRUD loadData = new class_CRUD();                         // class to upload data
+                    _dtgrViewWait.DataSource = loadData.uploadData(loadInfo);       // fill data into datagritview
                 }
                 catch
                 {
-                    _labelMessContent.Text = "Không tìm thấy!";
+                    _labelMessContent.Text = "Không tìm thấy!";                     //Mess when error
                 }
             }
         }
 
+
+        // Event when click button load
         private void _buttonLoadList_Click(object sender, EventArgs e)
         {
-            Main_Load(sender, e);
+            Main_Load(sender, e);                                                   // Call function main load
         }
 
         private void _buttonListAll_Click(object sender, EventArgs e)
@@ -445,40 +497,42 @@ namespace QuanLyNhanSu
             try
             {
                 j = 0;
-
-                String loadaccWait = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE trangthai < 1 AND _user.id_User = _acc.id_User";
+                // Command to load data
+                String loadaccWait = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE trangthai < 1 AND _user.id_User = _acc.id_User";
                 class_CRUD loadagain = new class_CRUD();
                 _dtgrViewWait.DataSource = loadagain.uploadData(loadaccWait);
             }
             catch
             {
-
+                // Exception
             }
         }
 
+
+        // Event when click List new
         private void _buttonListNew_Click(object sender, EventArgs e)
         {
             try
             {
                 j = 1;
-
-                String loadaccWait = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE trangthai = '-1' AND _user.id_User = _acc.id_User";
-                class_CRUD loadagain = new class_CRUD();
-                _dtgrViewWait.DataSource = loadagain.uploadData(loadaccWait);
+                // Command to upload data
+                String loadaccWait = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE trangthai = '-1' AND _user.id_User = _acc.id_User";
+                class_CRUD loadagain = new class_CRUD();                            // class to upload data
+                _dtgrViewWait.DataSource = loadagain.uploadData(loadaccWait);       // fill data
             }
             catch
             {
-
+                // Exception
             }
         }
 
-
+        // Event when click button agree
         private void _buttonAgree_Click(object sender, EventArgs e)
         {
             try
             {
-                
-                if (_chBoxChoseOne.Checked == true)
+
+                if (_chBoxChoseOne.Checked == true)                         // check all
                 {
                     String id = _dtgrViewWait.Rows[numrowWait].Cells[0].Value.ToString();
                     String agree = "UPDATE _acc SET trangthai = '1' WHERE id_User = '" + id + "'";
@@ -503,14 +557,16 @@ namespace QuanLyNhanSu
                     class_CRUD agreeUpdate = new class_CRUD();
                     agreeUpdate.handleData(agree);
                 }
-                Main_Load(sender, e);
+                Main_Load(sender, e);                                   // call function main load
             }
             catch
             {
-
+                // Exception
             }
         }
 
+
+        // Event when click button list wait late
         private void _buttonListWaitlate_Click(object sender, EventArgs e)
         {
 
@@ -518,54 +574,58 @@ namespace QuanLyNhanSu
             {
                 j = 2;
 
-                String loadaccWait = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, trangthai FROM _acc, _user WHERE trangthai = '0' AND _user.id_User = _acc.id_User";
-                class_CRUD loadagain = new class_CRUD();
-                _dtgrViewWait.DataSource = loadagain.uploadData(loadaccWait);
+                String loadaccWait = "SELECT _acc.id_User, tenTaiKhoan, firstName, lastName, matkhau, quyensudung FROM _acc, _user WHERE trangthai = '0' AND _user.id_User = _acc.id_User";
+                class_CRUD loadagain = new class_CRUD();               // class to upload data
+                _dtgrViewWait.DataSource = loadagain.uploadData(loadaccWait);       // fill data
             }
             catch
             {
-
+                // Exception
             }
         }
 
+
+        // Event when click button see late
         private void _buttonSeeLate_Click(object sender, EventArgs e)
         {
             try
             {
-                if (_chBoxChoseOne.Checked == true)
+                if (_chBoxChoseOne.Checked == true)             // check one
                 {
                     String id = _dtgrViewWait.Rows[numrowWait].Cells[0].Value.ToString();
-                    String agree = "UPDATE _acc SET trangthai = '0' WHERE id_User = '" + id + "'";
-                    class_CRUD agreeUpdate = new class_CRUD();
+                    String agree = "UPDATE _acc SET trangthai = '0' WHERE id_User = '" + id + "'";      //command SQL to handle data
+                    class_CRUD agreeUpdate = new class_CRUD();                                          // class to handle data
                     agreeUpdate.handleData(agree);
                 }
-                else if (j == 1)
+                else if (j == 1)                                // check list new
                 {
-                    String agree = "UPDATE _acc SET trangthai = '0' WHERE trangthai = '-1'";
-                    class_CRUD agreeUpdate = new class_CRUD();
-                    agreeUpdate.handleData(agree);
+                    String agree = "UPDATE _acc SET trangthai = '0' WHERE trangthai = '-1'";            // command SQL to handle data
+                    class_CRUD agreeUpdate = new class_CRUD();                                          // class to handle data
+                    agreeUpdate.handleData(agree);                                                      // handle data
                 }
                 else if (j == 2)
                 {
-                    
+                    // don't care
                 }
                 else
                 {
-                    String agree = "UPDATE _acc SET trangthai = '0' WHERE trangthai < 1";
-                    class_CRUD agreeUpdate = new class_CRUD();
-                    agreeUpdate.handleData(agree);
+                    String agree = "UPDATE _acc SET trangthai = '0' WHERE trangthai < 1";               // command SQL to handle data
+                    class_CRUD agreeUpdate = new class_CRUD();                                          // class to handle data
+                    agreeUpdate.handleData(agree);                                                      // handle data
                 }
                 Main_Load(sender, e);
             }
             catch
             {
-
+                // Exception
             }
         }
 
+
+        // Set value for check box
         private void _chBoxChoseOne_CheckedChanged(object sender, EventArgs e)
         {
-            if(_chBoxChoseOne.Checked == true)
+            if (_chBoxChoseOne.Checked == true)
             {
                 _chBoxChoseAll.Checked = false;
             }
@@ -575,23 +635,26 @@ namespace QuanLyNhanSu
             }
         }
 
+
+        // Event when click cancel
         private void _buttonCancel_Click(object sender, EventArgs e)
         {
             try
             {
                 if (i == 0)
                 {
-                    _FormMessToChangeInfo f = new _FormMessToChangeInfo(nameAcc);
+                    _FormMessToChangeInfo f = new _FormMessToChangeInfo(nameAcc);           // call form
                     i = 1;
                     f.Show();
                 }
                 else
                 {
+                    // Command SQL to handle data
                     String delAcc = "DELETE FROM _acc WHERE id_User = '" + _dtgrViewWait.Rows[numrowWait].Cells[0].Value.ToString() + "'";
                     String delAcc1 = "DELETE FROM _user WHERE id_User = '" + _dtgrViewWait.Rows[numrowWait].Cells[0].Value.ToString() + "'";
                     String delAcc2 = "DELETE FROM _luongCanhan WHERE id_User = '" + _dtgrViewWait.Rows[numrowWait].Cells[0].Value.ToString() + "'";
-                    class_CRUD delAccount = new class_CRUD();
-
+                    class_CRUD delAccount = new class_CRUD();                               // class to handle data
+                    // handle data
                     delAccount.handleData(delAcc);
                     delAccount.handleData(delAcc1);
                     delAccount.handleData(delAcc2);
@@ -602,24 +665,29 @@ namespace QuanLyNhanSu
             }
             catch
             {
-
+                // Exception
             }
         }
 
+
+
+        // Event when click button static
         private void _buttonStatistic_Click(object sender, EventArgs e)
         {
             try
             {
+                // command to upload data
                 String data = "SELECT birthDay FROM _user, _acc WHERE _user.id_User = _acc.id_User AND trangthai = 1";
                 String data2 = "SELECT ngayVaocty FROM _user, _acc WHERE _user.id_User = _acc.id_User AND trangthai = 1";
-                class_CRUD updata = new class_CRUD();
-                DataTable datatb, datatbquat;
+                class_CRUD updata = new class_CRUD();                               // class to upload data
+
+                DataTable datatb, datatbquat;                                       // data table to store data
                 int _20down = 0, _20x = 0, _30x = 0, _40x = 0, _50up = 0;
                 int _1down = 0, _1t2 = 0, _2t3 = 0, _3t5 = 0, _5up = 0;
                 datatb = updata.uploadData(data);
                 datatbquat = updata.uploadData(data2);
 
-
+                // Clear data in bieu do after set
                 if (_cBoxChoseStatistic.Text == "")
                 {
                     _labelMessStatistic.Text = "Vui lòng chọn thông tin xem.";
@@ -787,35 +855,43 @@ namespace QuanLyNhanSu
 
         }
 
+
+        // Event when click in datagritview
+
         private void _dtgrtViewMess_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                numrowMess = e.RowIndex;
-                _lbIDUp.Text = _dtgrtViewMess.Rows[e.RowIndex].Cells[0].Value.ToString();
+                numrowMess = e.RowIndex;                                                            // num row
+                _lbIDUp.Text = _dtgrtViewMess.Rows[e.RowIndex].Cells[0].Value.ToString();           // fill data
                 _lbNameSendUp.Text = _dtgrtViewMess.Rows[e.RowIndex].Cells[1].Value.ToString();
-                String Content = "SELECT noiDung FROM thongBao WHERE id_User = '" + _lbIDUp.Text + "' AND tieuDe = N'"+ _dtgrtViewMess.Rows[e.RowIndex].Cells[3].Value.ToString() + "'";
-                class_CRUD upContent = new class_CRUD();
-                DataTable tableContent;
-                tableContent = upContent.uploadData(Content);
+                String Content = "SELECT noiDung FROM thongBao WHERE id_User = '" + _lbIDUp.Text + "' AND tieuDe = N'" + _dtgrtViewMess.Rows[e.RowIndex].Cells[3].Value.ToString() + "'";
+                class_CRUD upContent = new class_CRUD();                                            // class to upload data
+                DataTable tableContent;                                                             // data table to store data
+                tableContent = upContent.uploadData(Content);                                       // upload data
 
                 _tBContentSend.Text = tableContent.Rows[0][0].ToString();
             }
             catch
             {
-
+                // Exception
             }
 
         }
 
+
+        // Event when click button see All
         private void _buttonSeeAll_Click(object sender, EventArgs e)
         {
             try
             {
+                // Command SQL to upload data
                 String LoadSend = "SELECT thongbao.id_User, lastName, kieuSend, tieuDe FROM thongBao, _user WHERE thongBao.id_User = _user.id_User AND state > -2";
-                class_CRUD dataSend = new class_CRUD();
-                _dtgrtViewMess.DataSource = dataSend.uploadData(LoadSend);
+                class_CRUD dataSend = new class_CRUD();                         // class to upload data
+                _dtgrtViewMess.DataSource = dataSend.uploadData(LoadSend);      // fill data
 
+
+                // set name header of datagritview
                 _dtgrtViewMess.Columns[0].HeaderText = "Mã Số";
                 _dtgrtViewMess.Columns[1].HeaderText = "Tên";
                 _dtgrtViewMess.Columns[2].HeaderText = "Kiểu";
@@ -823,18 +899,21 @@ namespace QuanLyNhanSu
             }
             catch
             {
-
+                // Exception
             }
         }
 
+        // Event when click button See new
         private void _buttonSeeNew_Click(object sender, EventArgs e)
         {
             try
             {
+                // Command SQL to upload data
                 String LoadSend = "SELECT thongbao.id_User, lastName, kieuSend, tieuDe FROM thongBao, _user WHERE thongBao.id_User = _user.id_User AND state = 1";
-                class_CRUD dataSend = new class_CRUD();
-                _dtgrtViewMess.DataSource = dataSend.uploadData(LoadSend);
+                class_CRUD dataSend = new class_CRUD();                         // class to upload data
+                _dtgrtViewMess.DataSource = dataSend.uploadData(LoadSend);      // fill data
 
+                //Set name header of datagritview
                 _dtgrtViewMess.Columns[0].HeaderText = "Mã Số";
                 _dtgrtViewMess.Columns[1].HeaderText = "Tên";
                 _dtgrtViewMess.Columns[2].HeaderText = "Kiểu";
@@ -842,18 +921,23 @@ namespace QuanLyNhanSu
             }
             catch
             {
+                //Exception
 
             }
         }
 
+
+        // Event when click button seen
         private void _buttonSeen_Click(object sender, EventArgs e)
         {
             try
             {
+                // command SQL to upload data
                 String LoadSend = "SELECT thongbao.id_User, lastName, kieuSend, tieuDe FROM thongBao, _user WHERE thongBao.id_User = _user.id_User AND state = 0";
-                class_CRUD dataSend = new class_CRUD();
-                _dtgrtViewMess.DataSource = dataSend.uploadData(LoadSend);
+                class_CRUD dataSend = new class_CRUD();                         // class to upload data
+                _dtgrtViewMess.DataSource = dataSend.uploadData(LoadSend);      // fill data
 
+                // Set name header for data gritview
                 _dtgrtViewMess.Columns[0].HeaderText = "Mã Số";
                 _dtgrtViewMess.Columns[1].HeaderText = "Tên";
                 _dtgrtViewMess.Columns[2].HeaderText = "Kiểu";
@@ -861,23 +945,27 @@ namespace QuanLyNhanSu
             }
             catch
             {
-
+                // Exception
             }
         }
 
+        // Event when click button send mess
         private void _buttonSendMess_Click(object sender, EventArgs e)
         {
-            _FormSendMess f = new _FormSendMess(nameAcc);
+            _FormSendMess f = new _FormSendMess(nameAcc);                       // call form
             f.Show();
         }
 
+        // Event wheen click chuyen CV
         private void _labelchuyenCV_Click(object sender, EventArgs e)
         {
-            _FormChuyen f = new _FormChuyen(nameAcc, getpass(nameAcc));
+            _FormChuyen f = new _FormChuyen(nameAcc, getpass(nameAcc));         // call form
             this.Close();
             f.Show();
         }
 
+
+        //Event when click Del requei
         private void _buttonDelReq_Click(object sender, EventArgs e)
         {
             try
@@ -885,14 +973,15 @@ namespace QuanLyNhanSu
 
                 if (a == 0)
                 {
-                    _FormMessToChangeInfo f = new _FormMessToChangeInfo(nameAcc);
+                    _FormMessToChangeInfo f = new _FormMessToChangeInfo(nameAcc);       // Repuei pass
                     a = 1;
                     f.Show();
                 }
                 else
                 {
+                    // Command SQL to handle data
                     String SeeLate = "DELETE FROM thongBao WHERE id_User = '" + _dtgrtViewMess.Rows[numrowMess].Cells[0].Value.ToString() + "' AND tieuDe = N'" + _dtgrtViewMess.Rows[numrowMess].Cells[3].Value.ToString() + "'";
-                    class_CRUD dataSend = new class_CRUD();
+                    class_CRUD dataSend = new class_CRUD();                             // class to handle data
                     dataSend.handleData(SeeLate);
                     _buttonSeeAll_Click(sender, e);
 
@@ -902,39 +991,44 @@ namespace QuanLyNhanSu
             }
             catch
             {
-
+                // Exception
             }
-                
-
         }
 
+
+        // Event when click button see late
         private void _buttonSeeLateReq_Click(object sender, EventArgs e)
         {
             try
             {
-                String SeeLate = "UPDATE thongBao SET state = 0 WHERE id_User = '"+_dtgrtViewMess.Rows[numrowMess].Cells[0].Value.ToString()+"' AND tieuDe = N'"+_dtgrtViewMess.Rows[numrowMess].Cells[3].Value.ToString() + "' AND state != -2";
-                class_CRUD dataSend = new class_CRUD();
-                dataSend.handleData(SeeLate);
-                _buttonSeen_Click(sender,e);
+                // Command SQL to handle data
+                String SeeLate = "UPDATE thongBao SET state = 0 WHERE id_User = '" + _dtgrtViewMess.Rows[numrowMess].Cells[0].Value.ToString() + "' AND tieuDe = N'" + _dtgrtViewMess.Rows[numrowMess].Cells[3].Value.ToString() + "' AND state != -2";
+                class_CRUD dataSend = new class_CRUD();                         // class to handle data
+                dataSend.handleData(SeeLate);                                   // handle data
+                _buttonSeen_Click(sender, e);
 
 
             }
             catch
             {
-
+                // Exception
             }
-            
+
         }
 
+
+        // Event when click in datagritview
         private void _dtgrViewWait_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            DataTable column = new DataTable();
-            class_CRUD updata = new class_CRUD();
-            numrowWait = e.RowIndex;
+
+            DataTable column = new DataTable();                                     // data table to store data
+            class_CRUD updata = new class_CRUD();                                   // class to handle data
+            numrowWait = e.RowIndex;                                                // num row
             try
             {
                 _tBoxID2.Text = _dtgrViewWait.Rows[numrowWait].Cells[0].Value.ToString();
+
+                // Command SQL to upload data
                 String loadFirstName = "SELECT firstName FROM _user WHERE id_User = '" + _tBoxID2.Text + "'";
                 String loadLastName = "SELECT lastName FROM _user WHERE id_User = '" + _tBoxID2.Text + "'";
                 String loadbirthDay = "SELECT birthDay FROM _user WHERE id_User = '" + _tBoxID2.Text + "'";
@@ -942,30 +1036,31 @@ namespace QuanLyNhanSu
                 String loadAddress = "SELECT Address FROM _user WHERE id_User = '" + _tBoxID2.Text + "'";
                 String loadEmail = "SELECT Email FROM _user WHERE id_User = '" + _tBoxID2.Text + "'";
 
-                column = updata.uploadData(loadFirstName);
+                column = updata.uploadData(loadFirstName);                           // First name
                 this._tBoxFirstName2.Text = column.Rows[0][0].ToString();
 
-                column = updata.uploadData(loadLastName);
+                column = updata.uploadData(loadLastName);                           // :ast nmae
                 this._tBoxLastName2.Text = column.Rows[0][0].ToString();
 
-                column = updata.uploadData(loadbirthDay);
+                column = updata.uploadData(loadbirthDay);                           // Birthday
                 this._tBoxBirthDay2.Text = column.Rows[0][0].ToString();
 
-                column = updata.uploadData(loadCMND);
+                column = updata.uploadData(loadCMND);                               // CMND
                 this._tBoxCMND2.Text = column.Rows[0][0].ToString();
 
-                column = updata.uploadData(loadEmail);
+                column = updata.uploadData(loadEmail);                              // Email
                 this._tBoxEmail2.Text = column.Rows[0][0].ToString();
 
-                column = updata.uploadData(loadAddress);
+                column = updata.uploadData(loadAddress);                            // Address
                 this._tBoxAddress2.Text = column.Rows[0][0].ToString();
             }
             catch
             {
-
+                //Exception
             }
-    }
+        }
 
+        // Set value for check box
         private void _chBoxChoseAll_CheckedChanged(object sender, EventArgs e)
         {
             if (_chBoxChoseAll.Checked == true)

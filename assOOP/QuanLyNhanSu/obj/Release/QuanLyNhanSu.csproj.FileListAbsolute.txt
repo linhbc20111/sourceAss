@@ -48,3 +48,4 @@ C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Release\Q
 C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Release\QuanLyNhanSu.csproj.GenerateResource.Cache
 C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\bin\Release\QuanLyNhanSu.exe
 C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\bin\Release\QuanLyNhanSu.pdb
+C:\Users\Cong Hoa Nguyen\Desktop\Git\sourceAss\assOOP\QuanLyNhanSu\obj\Release\QuanLyNhanSu.csprojResolveAssemblyReference.cache

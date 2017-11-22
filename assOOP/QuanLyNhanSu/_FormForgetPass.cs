@@ -27,38 +27,40 @@ namespace QuanLyNhanSu
             this._tBoxNewPassAgain.PasswordChar = '*';             // Convert char input to '*"
         }
 
+
+        /*
+         * Function is a event
+         * when click function will update data by update pass and set status = -1
+         * Function use to Command UPDATE of SQL to update data
+         */
         private void _buttonSendRequire_Click(object sender, EventArgs e)
         {
-            String checkPass = "SELECT * FROM _acc WHERE tenTaikhoan = N'" + _tBoxNameAcc.Text + "' AND trangthai = '1' ";
-            String changePass = "UPDATE _acc SET matkhau = N'" + _tBoxNewPass.Text + "', trangthai = '-3' WHERE tenTaikhoan = N'" + _tBoxNameAcc.Text + "'";
-            class_CRUD pass = new class_CRUD();
-            if (_tBoxNewPass.Text == "" || _tBoxNewPassAgain.Text == "")
+            String checkPass = "SELECT * FROM _acc WHERE tenTaikhoan = N'" + _tBoxNameAcc.Text + "' AND trangthai = '1' ";              // command SQL check pass
+            String changePass = "UPDATE _acc SET matkhau = N'" + _tBoxNewPass.Text + "', trangthai = '-3' WHERE tenTaikhoan = N'" + _tBoxNameAcc.Text + "'"; // command SQL to update data
+            class_CRUD pass = new class_CRUD();                    // creat class to update data
+            if (_tBoxNewPass.Text == "" || _tBoxNewPassAgain.Text == "")       
             {
                 _labelMess.Text = "Bạn chưa nhập mật khẩu.";       // New pass = Null => out mess
             }
-
-
             else if (_tBoxNameAcc.Text == "")
             {
                 _labelMess.Text = "Bạn chưa nhập tài khoản.";      // Name acc = Null => out mess
             }
-
-
-            else if (pass.checkData(checkPass))
+            else if (pass.checkData(checkPass))                     // check pass
             {
                 if (_tBoxNewPass.Text == _tBoxNewPassAgain.Text && _chBoxRequire.Checked == true && _tBoxNewPass.Text != "")
                 {
-                    if (pass.handleData(changePass))
+                    if (pass.handleData(changePass))                // handle data by update
                     {
                          
                         this.Close();
                     }
                 }
-                else if (_chBoxRequire.Checked == false)
+                else if (_chBoxRequire.Checked == false)            // check null check box
                 {
                     _labelMess.Text = "Vui lòng xác nhận yêu cầu.";
                 }
-                else if (_tBoxNewPass.Text != _tBoxNewPassAgain.Text)
+                else if (_tBoxNewPass.Text != _tBoxNewPassAgain.Text)       // check pass again = pass
                 {
                     _labelMess.Text = "Bạn nhập sai mật khẩu.";
                 }
@@ -67,7 +69,7 @@ namespace QuanLyNhanSu
 
             else
             {
-                _labelMess.Text = "Không tìm thấy tài khoản";
+                _labelMess.Text = "Không tìm thấy tài khoản";     // else pass wrong
             }
         }
     }

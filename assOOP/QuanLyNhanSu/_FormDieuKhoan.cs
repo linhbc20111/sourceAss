@@ -17,6 +17,7 @@ namespace QuanLyNhanSu
             InitializeComponent();
         }
 
+        // This form use read dieu khoan
         private void _buttonDahieu_Click(object sender, EventArgs e)
         {
             this.Close();           

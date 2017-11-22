@@ -222,7 +222,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "_FormChangeAcc";
-            this.Text = "_FormChangeAcc";
+            this.Text = "Đổi Thông Tin";
             this.Load += new System.EventHandler(this._FormChangeAcc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

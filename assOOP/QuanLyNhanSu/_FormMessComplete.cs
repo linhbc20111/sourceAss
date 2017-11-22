@@ -17,6 +17,7 @@ namespace QuanLyNhanSu
             InitializeComponent();
         }
 
+        // when click this form will close
         private void _buttonOk_Click(object sender, EventArgs e)
         {
             this.Close();
